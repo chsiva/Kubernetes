@@ -1,3 +1,15 @@
+# why kubernetes
+As far as I understand, Kubernetes is for orchestrating the things that have more advantages than provisioning in the traditional way.
+
+If we have more applications and that applications need to migrate from on premise to cloud and maintain availability with zero downtime. We can go with Kubernetes.
+
+Instead of maintaining docker containers, and the control plane, Google provided with GKE service where these both will be maintained by Google SRE team. We can use this GKE to create a cluster with master and minion nodes. where we can use this master node to deploy apps on the nodes and make this available or expose to the internet using the service ( Load balancer).
+
+Probably, this leads to eliminate latency and improves the Scalability and availability of the applications.
+
+
+
+
 # What you did with Kubernetes?
     Worked on setting up Docker Orchestration platform. Kubernetes for deployment of Docker containers on a large scale.
     Managed Kubernetes minions & masters to patch with latest security updates by evicting and uncording the nodes during the process.
