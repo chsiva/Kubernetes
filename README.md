@@ -7,6 +7,44 @@ Instead of maintaining docker containers, and the control plane, Google provided
 
 Probably, this leads to eliminate latency and improves the Scalability and availability of the applications.
 
+# master components
+
+Scheduler - assigns your application to the worker node
+Api server - communication hhub for the cluster components. It exposes the kubernetes API
+etcd. - stores all the configuration
+contoller manager - Maintaining cluster, handles node failures, replicating components, maintaing the correct amount of pods
+
+# worker components
+Kubectl  - runs and manage the containers on the cluster and talks to the API server
+kube-proxy - load balances the traffic b/w application components
+container runtime - the program that runs your container
+
+# A deployment is an object in Kubernetes that lets you manage a set of identical pods.
+
+Without a deployment, you’d need to create, update, and delete a bunch of pods manually.
+
+With a deployment, you declare a single object in a YAML file. This object is responsible for creating the pods, making sure they stay up to date, and ensuring there are enough of them running.
+
+
+# Replicaset
+ReplicaSets are a higher-level API that gives you the ability to easily run multiple instances of a given pod. You tell the ReplicaSets the number of pods that you want it to run and it will ensure that the exact number of pods are actually running.
+
+# Service
+Service is an abstraction which defines a logical set of Pods and a policy by which to access them
+In Kuberenetes we have 4 types of services.
+
+# ClusterIP. 
+This default type exposes the service on a cluster-internal IP. You can reach the service only from within the cluster.
+
+# NodePort. 
+This type of service exposes the service on each node’s IP at a static port. A ClusterIP service is created automatically, and the NodePort service will route to it. From outside the cluster, you can contact the NodePort service by using “<NodeIP>:<NodePort>”.
+
+# LoadBalancer. 
+This service type exposes the service externally using the load balancer of your cloud provider. The external load balancer routes to your NodePort and ClusterIP services, which are created automatically.
+
+# ExternalName. 
+This type maps the service to the contents of the externalName field (e.g., foo.bar.example.com). It does this by returning a value for the CNAME record.
+
 
 
 
