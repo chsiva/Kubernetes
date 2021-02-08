@@ -10,13 +10,19 @@ Probably, this leads to eliminate latency and improves the Scalability and avail
 # master components
 
 Scheduler - assigns your application to the worker node
+
 Api server - communication hhub for the cluster components. It exposes the kubernetes API
+
 etcd. - stores all the configuration
+
 contoller manager - Maintaining cluster, handles node failures, replicating components, maintaing the correct amount of pods
 
 # worker components
+
 Kubectl  - runs and manage the containers on the cluster and talks to the API server
+
 kube-proxy - load balances the traffic b/w application components
+
 container runtime - the program that runs your container
 
 # A deployment is an object in Kubernetes that lets you manage a set of identical pods.
