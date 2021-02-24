@@ -31,6 +31,18 @@ Without a deployment, you’d need to create, update, and delete a bunch of pods
 
 With a deployment, you declare a single object in a YAML file. This object is responsible for creating the pods, making sure they stay up to date, and ensuring there are enough of them running.
 
+# deployment strategies
+
+Blue-Green Deployment - When deploying a new version of an application, a second environment is created. 
+                        Once the new environment is tested, it takes over from the old version. The old environment can then be turned off.
+                        
+A/B Testing - Two versions of an application are running at the same time. A portion of requests go to each. Developers can then compare the versions.  
+
+Canary Release - A new version of a microservice is started along with the old versions. 
+                 That new version can then take a portion of the requests and the team can test how this new version interacts with the overall system.
+                 
+https://opensource.com/article/17/5/colorful-deployments
+
 
 # Replicaset
 ReplicaSets are a higher-level API that gives you the ability to easily run multiple instances of a given pod. You tell the ReplicaSets the number of pods that you want it to run and it will ensure that the exact number of pods are actually running.
