@@ -45,6 +45,13 @@ https://opensource.com/article/17/5/colorful-deployments
 
 # service vs Ingress Vs deployment  
 
+Kubernetes Service
+We have pods running on Kubernetes cluster which has to be connected by some way. That’s the job of Service.
+
+Ingress Communicates with Service
+The service can be used only within the cluster. For, eg. within the cluster we can access nginx with command curl http://my-service where my-service is the service name with selector to nginx pod.
+Now, we need to configure way to access the services out of cluster via "IP address or some URL". Ingress comes here also for SSL termination to load balancing.
+
 https://dwdraju.medium.com/how-deployment-service-ingress-are-related-in-their-manifest-a2e553cf0ffb
 
 https://medium.com/google-cloud/kubernetes-nodeport-vs-loadbalancer-vs-ingress-when-should-i-use-what-922f010849e0
@@ -57,17 +64,17 @@ ReplicaSets are a higher-level API that gives you the ability to easily run mult
 Service is an abstraction which defines a logical set of Pods and a policy by which to access them
 In Kuberenetes we have 4 types of services.
 
-1.1 # ClusterIP. 
-This default type exposes the service on a cluster-internal IP. You can reach the service only from within the cluster.
+ 1.1 # ClusterIP. 
+ This default type exposes the service on a cluster-internal IP. You can reach the service only from within the cluster.
 
-1.2 # NodePort. 
-This type of service exposes the service on each node’s IP at a static port. A ClusterIP service is created automatically, and the NodePort service will route to it. From outside the cluster, you can contact the NodePort service by using “<NodeIP>:<NodePort>”.
+ 1.2 # NodePort. 
+ This type of service exposes the service on each node’s IP at a static port. A ClusterIP service is created automatically, and the NodePort service will route to  it. From outside the cluster, you can contact the NodePort service by using “<NodeIP>:<NodePort>”.
 
-1.3 # LoadBalancer. 
-This service type exposes the service externally using the load balancer of your cloud provider. The external load balancer routes to your NodePort and ClusterIP services, which are created automatically.
-
-# ExternalName. 
-This type maps the service to the contents of the externalName field (e.g., foo.bar.example.com). It does this by returning a value for the CNAME record.
+ 1.3 # LoadBalancer. 
+ This service type exposes the service externally using the load balancer of your cloud provider. The external load balancer routes to your NodePort and ClusterIP   services, which are created automatically.
+ 
+ 1.4 # ExternalName. 
+ This type maps the service to the contents of the externalName field (e.g., foo.bar.example.com). It does this by returning a value for the CNAME record.
 
 
 # What you did with Kubernetes?
