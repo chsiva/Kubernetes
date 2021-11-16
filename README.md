@@ -78,10 +78,7 @@ In Kuberenetes we have 4 types of services.
 
 
 # What you did with Kubernetes?
-    Worked on setting up Docker Orchestration platform. Kubernetes for deployment of Docker containers on a large scale.
-    Managed Kubernetes minions & masters to patch with latest security updates by evicting and uncording the nodes during the process.
-    Managed local deployments in Kubernetes, creating local cluster and deploying application containers.
-    Container management using Docker by writing Dockerfiles and set up the automated build on Docker HUB and installed and configuredKubernetes.
+Used Kubernetes to orchestrate the deployment(  Managed local deployments in Kubernetes, creating local cluster and deploying application containers) where got exposed with various deployment technologies, also participated with scaling and management of Docker Containers. Managed Kubernetes minions & masters to patch with latest security updates by evicting and uncording the nodes during the process. Container management using Docker by writing Dockerfiles and set up the automated build on Docker HUB and installed and configuredKubernetes.
         
 # Kubernetes Issues:
     some major issues with Kubernetes I came across was like 
