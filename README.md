@@ -43,27 +43,28 @@ Canary Release - A new version of a microservice is started along with the old v
                  
 https://opensource.com/article/17/5/colorful-deployments
 
+# service vs Ingress Vs deployment  
+https://dwdraju.medium.com/how-deployment-service-ingress-are-related-in-their-manifest-a2e553cf0ffb
+
 
 # Replicaset
 ReplicaSets are a higher-level API that gives you the ability to easily run multiple instances of a given pod. You tell the ReplicaSets the number of pods that you want it to run and it will ensure that the exact number of pods are actually running.
 
-# Service
+1 # Service
 Service is an abstraction which defines a logical set of Pods and a policy by which to access them
 In Kuberenetes we have 4 types of services.
 
-# ClusterIP. 
+1.1 # ClusterIP. 
 This default type exposes the service on a cluster-internal IP. You can reach the service only from within the cluster.
 
-# NodePort. 
+1.2 # NodePort. 
 This type of service exposes the service on each node’s IP at a static port. A ClusterIP service is created automatically, and the NodePort service will route to it. From outside the cluster, you can contact the NodePort service by using “<NodeIP>:<NodePort>”.
 
-# LoadBalancer. 
+1.3 # LoadBalancer. 
 This service type exposes the service externally using the load balancer of your cloud provider. The external load balancer routes to your NodePort and ClusterIP services, which are created automatically.
 
 # ExternalName. 
 This type maps the service to the contents of the externalName field (e.g., foo.bar.example.com). It does this by returning a value for the CNAME record.
-
-
 
 
 # What you did with Kubernetes?
