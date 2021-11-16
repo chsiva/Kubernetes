@@ -44,7 +44,10 @@ Canary Release - A new version of a microservice is started along with the old v
 https://opensource.com/article/17/5/colorful-deployments
 
 # service vs Ingress Vs deployment  
+
 https://dwdraju.medium.com/how-deployment-service-ingress-are-related-in-their-manifest-a2e553cf0ffb
+
+https://medium.com/google-cloud/kubernetes-nodeport-vs-loadbalancer-vs-ingress-when-should-i-use-what-922f010849e0
 
 
 # Replicaset
