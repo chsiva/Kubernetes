@@ -8,12 +8,18 @@ Instead of maintaining docker containers, and the control plane, Google provided
 Probably, this leads to eliminate latency and improves the Scalability and availability of the applications.
 
 # Features of Kubernetes
-Automated Scheduling.
-Self-Healing Capabilities.
-Automated rollouts & rollback.
-Horizontal Scaling & Load Balancing.
-Offers environment consistency for development, testing, and production.
-Infrastructure is loosely coupled to each component can act as a separate unit.
+
+1. Automated Scheduling.
+
+2. Self-Healing Capabilities.
+
+3. Automated rollouts & rollback.
+
+4. Horizontal Scaling (add more machines) & Load Balancing.
+
+5. Offers environment consistency for development, testing, and production.
+
+6. Infrastructure is loosely coupled to each component can act as a separate unit.
 
 # master components
 
