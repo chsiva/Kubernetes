@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eks-sample-nginx-deployment
+  namespace: eks-sample-app
+  labels:
+    app: eks-sample-nginx-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: eks-sample-nginx-app
+  template:
+    metadata:
+      labels:
+        app: eks-sample-nginx-app
+      containers:
+      - name: nginx
+        image: public.ecr.aws/nginx/nginx:1.21
+        ports:
+        - name: http
+          containerPort: 8080
