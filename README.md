@@ -42,11 +42,11 @@ Probably, this leads to eliminate latency and improves the Scalability and avail
  *cluster > "N" no.of master/worker nodes
 
 
-# components
-
-  https://kubernetes.io/docs/concepts/overview/components/
+# Kube components
 
 
+    https://kubernetes.io/docs/concepts/overview/components/
+    
     * master components
 
         Scheduler - assigns your application to the worker node
@@ -98,6 +98,8 @@ https://dwdraju.medium.com/how-deployment-service-ingress-are-related-in-their-m
 
 https://medium.com/google-cloud/kubernetes-nodeport-vs-loadbalancer-vs-ingress-when-should-i-use-what-922f010849e0
 
+# Nginx vs Istio (cuurent project using Istio)
+
 
 # Replicaset
 ReplicaSets are a higher-level API that gives you the ability to easily run multiple instances of a given pod. You tell the ReplicaSets the number of pods that you want it to run and it will ensure that the exact number of pods are actually running.
@@ -128,18 +130,34 @@ Used Kubernetes to orchestrate the deployment(  Managed local deployments in Kub
   Api proxy: Access inside "namepsace"
 
 # Kubernetes Issues:
+
     some major issues with Kubernetes I came across was like 
     1. etcd member has no leader,  etcd is not available, or controller manager is unavailable, 
        Scheduler is unavailable. So these are the kind of issues I worked on before. 
 
-    2. 
+    2. Failure within kubernetes to start application container pods
+        * App not coming up within mention time in liveness/readiness probe "3 mins"
+        * Probe itself unable to detect
 
-    3. 
+    3. chart.metadata.version is required 
+         * chart.yaml under dploy-config missing line "version: 1.0.0"
 
-    4.
+    4. deployment with name "blah" not found
+         * deployment.yaml file under templates missing name of deployment
+
+    5. Namespace not found
+          * check on cluster if namespace exists using kubectl get namespace and also verify if it is included in deploy.yaml and values.yaml
+
+    6. unable to connect to server or Ip oof the worker not in allowed list
+       * check cluster connections details
+       * verify if it is allowed under "control plabe authorized networks"
        
 # Monitoing
-    Yes, basically in order to ensure any kind of like CPU usage or memory usage. I purposefully monitoring that using like application performance monitoring tools, using like APP dynamics. New Relic in order to ensure like average response time, load management and error checks and basically for setting up a high availability Kubernetes master are used to manage our Kubernetes master replicating that on different availability zones.
+    Yes, basically in order to ensure any kind of like CPU usage or memory usage. 
+    I purposefully monitoring that using like application performance monitoring tools, using like APP dynamics. 
+    New Relic - 
+       in order to ensure like average response time, load management, error checks
+       and basically for setting up a high availability Kubernetes master are used to manage our Kubernetes master replicating that on different availability zones.
         
 # Load Balancing Techniques
     So basically, I have used like Ingress controllers for load balancing techniques. basically for eliminating SSL and punch termination.
