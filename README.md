@@ -18,35 +18,7 @@ To Maintain high availability with zero downtime. For ex: scale up/down using ho
 - vertical scaling: Irrespective of load/traffic, task divided into chunks & shared b/w all the available Pods
 - Horizontal scaling: Based on load/traffic, kubernets will scale up pod and assign task ( 70% CPU/Memory usage)
 
-#GKE concepts
-*cluster > N no.of master/worker nodes
-
-
-#components
-
-https://kubernetes.io/docs/concepts/overview/components/
-
-
-# master components
-
-Scheduler - assigns your application to the worker node
-
-Api server - communication hhub for the cluster components. It exposes the kubernetes API
-
-etcd. - stores all the configuration
-
-contoller manager - Maintaining cluster, handles node failures, replicating components, maintaing the correct amount of pods
-
-# worker components
-
-Kubectl  - runs and manage the containers on the cluster and talks to the API server
-
-kube-proxy - load balances the traffic b/w application components
-
-container runtime - the program that runs your container
-
-
-#Why GKE?
+# Why GKE?
 
 Instead of maintaining docker containers, and the control plane, Google provided with GKE service where these both will be maintained by Google SRE team. We can use this GKE to create a cluster with master and minion nodes. where we can use this master node to deploy apps on the nodes and make this available or expose to the internet using the service ( Load balancer).
 
@@ -66,8 +38,36 @@ Probably, this leads to eliminate latency and improves the Scalability and avail
 
 6. Infrastructure is loosely coupled to each component can act as a separate unit.
 
+# GKE concepts
+ *cluster > "N" no.of master/worker nodes
 
-# A deployment is an object in Kubernetes that lets you manage a set of identical pods.
+
+# components
+
+  https://kubernetes.io/docs/concepts/overview/components/
+
+
+    * master components
+
+        Scheduler - assigns your application to the worker node
+
+        Api server - communication hhub for the cluster components. It exposes the kubernetes API
+
+        etcd. - stores all the configuration
+
+        contoller manager - Maintaining cluster, handles node failures, replicating components, maintaing the correct amount of pods
+
+    * worker components
+
+       Kubectl  - runs and manage the containers on the cluster and talks to the API server
+
+       kube-proxy - load balances the traffic b/w application components
+
+       container runtime - the program that runs your container
+
+
+
+# Deployment is an object in Kubernetes that lets you manage a set of identical pods.
 
 Without a deployment, you’d need to create, update, and delete a bunch of pods manually.
 
@@ -121,7 +121,12 @@ In Kuberenetes we have 4 types of services.
 
 # What you did with Kubernetes?
 Used Kubernetes to orchestrate the deployment(  Managed local deployments in Kubernetes, creating local cluster and deploying application containers) where got exposed with various deployment technologies, also participated with scaling and management of Docker Containers. Managed Kubernetes minions & masters to patch with latest security updates by evicting and uncording the nodes during the process. Container management using Docker by writing Dockerfiles and set up the automated build on Docker HUB and installed and configuredKubernetes.
-        
+
+# GKE connecton to cluster details
+  API endpoint: cluster ip address ( https://<>)
+  Cluster Token: cluster level access ( diorectly login to cluster & look everything, run code manually)
+  Api proxy: Access inside "namepsace"
+
 # Kubernetes Issues:
     some major issues with Kubernetes I came across was like 
     1. etcd member has no leader,  etcd is not available, or controller manager is unavailable, 
