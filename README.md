@@ -18,6 +18,15 @@ To Maintain high availability with zero downtime. For ex: scale up/down using ho
 - vertical scaling: Irrespective of load/traffic, task divided into chunks & shared b/w all the available Pods
 - Horizontal scaling: Based on load/traffic, kubernets will scale up pod and assign task ( 70% CPU/Memory usage)
 
+| Component                    | Description                                                                                     |
+| ---------------------------- | ----------------------------------------------------------------------------------------------- |
+| **kube-apiserver**           | Frontend to the Kubernetes control plane; all commands (kubectl, UI, etc.) go through this API. |
+| **etcd**                     | A key-value store for all cluster data and configuration (acts like a database for Kubernetes). |
+| **kube-scheduler**           | Decides which node a pod should run on based on resource availability, affinity rules, etc.     |
+| **kube-controller-manager**  | Runs controllers that handle routine tasks (e.g., replicating pods, managing endpoints).        |
+| **cloud-controller-manager** | Manages cloud-specific tasks (like load balancer, storage provisioning on GCP, AWS, etc.).      |
+
+
 # Why GKE?
 
 Instead of maintaining docker containers, and the control plane, Google provided with GKE service where these both will be maintained by Google SRE team. We can use this GKE to create a cluster with master and minion nodes. where we can use this master node to deploy apps on the nodes and make this available or expose to the internet using the service ( Load balancer).
